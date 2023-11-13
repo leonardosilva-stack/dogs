@@ -11,17 +11,13 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = React.useState(null);
   const navigate = useNavigate();
 
-  const userLogout = React.useCallback(
-    async function userLogout() {
-      setData(null);
-      setError(null);
-      setLoading(false);
-      setLogin(false);
-      window.localStorage.removeItem("token");
-      navigate("/login");
-    },
-    [navigate]
-  );
+  const userLogout = React.useCallback(async function userLogout() {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem("token");
+  }, []);
 
   async function getUser(token) {
     const { url, options } = USER_GET(token);
@@ -42,7 +38,7 @@ export const UserStorage = ({ children }) => {
 
       window.localStorage.setItem("token", token);
       await getUser(token);
-      navigate("/conta");
+      navigate("/conta/");
     } catch (err) {
       setError(err.message);
       setLogin(false);
@@ -67,8 +63,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
-      }else{
-        setLogin(false)
+      } else {
+        setLogin(false);
       }
     }
     autoLogin();
