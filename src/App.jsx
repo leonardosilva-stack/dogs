@@ -11,7 +11,7 @@ import ProtectedRoute from "./Components/Helper/ProtectedRoute";
 const App = () => {
   return (
     <div>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/dogs">
         <UserStorage>
           <Header />
           <Routes>
