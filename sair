@@ -1,0 +1,72 @@
+[33mcommit 76ea643d56e6a1909670eda1fe267e7dd7acec50[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 01:29:11 2023 -0300
+
+    fix: vite config
+
+[33mcommit 53f6a5c2b7db2656637e47e4cae1b4f8fdf02d2b[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 01:06:55 2023 -0300
+
+    fix: vite config
+
+[33mcommit 67103f91640148d621814d52e1c0bfd164066488[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 01:01:20 2023 -0300
+
+    feat: add homepage to package.json
+
+[33mcommit ed9aae351f2d76eb177c7b929c82790b1f317277[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 00:57:03 2023 -0300
+
+    fix: basename
+
+[33mcommit 1daf99b76e8e4be0bdca11b89218843ce3396c04[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 00:52:38 2023 -0300
+
+    feat: add github actions
+
+[33mcommit 5f28703e2339eb2c1f998641499bea0e3adf6a6f[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Mon Nov 20 00:31:46 2023 -0300
+
+    feat: create UserPhotoPost
+
+[33mcommit 39b4ca6e9c462d31655985afd7e1f2c52aae3e75[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Wed Nov 15 21:05:29 2023 -0300
+
+    feat: Mobile Menu
+
+[33mcommit 968bb114ccc677b3ca430571801399bdd1bd9a29[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Sun Nov 12 22:05:47 2023 -0300
+
+    feat: User Header
+
+[33mcommit 7eb473931163720bf81ae3d23138c8b89d80b614[m
+Merge: e74956d 5c396dc
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Thu Sep 7 23:07:06 2023 -0300
+
+    Merge branch 'main' of github.com:leonardosilva-stack/dogs
+
+[33mcommit e74956dbf86daf9a631c5e4c38d358db49b708fe[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Thu Sep 7 23:05:04 2023 -0300
+
+    feat: Protected Route
+
+[33mcommit 5c396dc75d87fd26577a738d3b88deea18e056ee[m
+Author: Leonardo Rosa da Silva <73203403+leonardosilva-stack@users.noreply.github.com>
+Date:   Sun Aug 20 23:01:38 2023 -0300
+
+    docs: update README.md
+
+[33mcommit 438a58360286c19f90de1efacb09340123711a7d[m
+Author: Leonardo Rosa da Silva <leonardo.rosa.silva@outlook.com.br>
+Date:   Sun Aug 20 22:45:44 2023 -0300
+
+    feat: create Hook useFetch
