@@ -26,16 +26,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create .htaccess file
-        run: |
-          echo "RewriteCond %{HTTPS} !=on" >> .htaccess
-          echo "RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]" >> .htaccess
-          echo "" >> .htaccess
-          echo "Options -MultiViews" >> .htaccess
-          echo "RewriteEngine On" >> .htaccess
-          echo "RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
-          echo "RewriteRule ^ index.html [QSA,L]" >> .htaccess
-
       - name: Set up Git
         run: |
           git config --global user.email "leonardo.rosa.silva@outlook.com.br"
@@ -51,9 +41,24 @@ jobs:
       - name: Create and Deploy to production branch
         run: |
           git checkout -b production
-          git rm -f .htaccess  # Remove o arquivo .htaccess localmente
+          git rm -r .
           mv dist/* .
           git add .
-          git add .htaccess  # Adiciona o arquivo .htaccess
           git commit -m "Deploy to production"
           git push origin +production
+
+      - name: Add .htaccess configuration
+        run: |
+          echo "RewriteCond %{HTTPS} !=on" >> .htaccess
+          echo "RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]" >> .htaccess
+          echo "" >> .htaccess
+          echo "Options -MultiViews" >> .htaccess
+          echo "RewriteEngine On" >> .htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
+          echo "RewriteRule ^ index.html [QSA,L]" >> .htaccess
+
+      - name: Commit and push changes to production branch with .htaccess
+        run: |
+          git add .htaccess
+          git commit -m "Add .htaccess configuration"
+          git push origin production
