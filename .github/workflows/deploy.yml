@@ -49,12 +49,10 @@ jobs:
 
       - name: Add .htaccess configuration
         run: |
-          echo "RewriteCond %{HTTPS} !=on" >> .htaccess
-          echo "RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]" >> .htaccess
-          echo "" >> .htaccess
           echo "Options -MultiViews" >> .htaccess
           echo "RewriteEngine On" >> .htaccess
           echo "RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-d" >> .htaccess
           echo "RewriteRule ^ index.html [QSA,L]" >> .htaccess
 
       - name: Commit and push changes to production branch with .htaccess
