@@ -26,8 +26,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Add .htaccess to build directory
-        run: cp .htaccess dist/
+      - name: Create .htaccess file
+        run: |
+          echo "RewriteCond %{HTTPS} !=on" >> .htaccess
+          echo "RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]" >> .htaccess
+          echo "" >> .htaccess
+          echo "Options -MultiViews" >> .htaccess
+          echo "RewriteEngine On" >> .htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
+          echo "RewriteRule ^ index.html [QSA,L]" >> .htaccess
 
       - name: Set up Git
         run: |
@@ -44,7 +51,9 @@ jobs:
       - name: Create and Deploy to production branch
         run: |
           git checkout -b production
+          git rm -r .
           mv dist/* .
           git add .
+          git add .htaccess  # Adiciona o arquivo .htaccess
           git commit -m "Deploy to production"
           git push origin +production
