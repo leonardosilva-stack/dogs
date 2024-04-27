@@ -26,6 +26,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Add .htaccess to build directory
+        run: cp .htaccess dist/
+
       - name: Set up Git
         run: |
           git config --global user.email "leonardo.rosa.silva@outlook.com.br"
@@ -41,7 +44,6 @@ jobs:
       - name: Create and Deploy to production branch
         run: |
           git checkout -b production
-          git rm -r .
           mv dist/* .
           git add .
           git commit -m "Deploy to production"
