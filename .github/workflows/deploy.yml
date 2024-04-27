@@ -51,7 +51,7 @@ jobs:
       - name: Create and Deploy to production branch
         run: |
           git checkout -b production
-          git rm -r .
+          git rm -f .htaccess  # Remove o arquivo .htaccess localmente
           mv dist/* .
           git add .
           git add .htaccess  # Adiciona o arquivo .htaccess
