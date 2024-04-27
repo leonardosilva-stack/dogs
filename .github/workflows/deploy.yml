@@ -49,11 +49,12 @@ jobs:
 
       - name: Add .htaccess configuration
         run: |
-          echo "Options -MultiViews" >> .htaccess
           echo "RewriteEngine On" >> .htaccess
+          echo "RewriteBase /dogs/" >> .htaccess
+          echo "RewriteRule ^index\.html$ - [L]" >> .htaccess
           echo "RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
           echo "RewriteCond %{REQUEST_FILENAME} !-d" >> .htaccess
-          echo "RewriteRule ^ index.html [QSA,L]" >> .htaccess
+          echo "RewriteRule . /dogs/index.html [L]" >> .htaccess
 
       - name: Commit and push changes to production branch with .htaccess
         run: |
