@@ -1,0 +1,15 @@
+{
+    "redirects": [
+        {
+            "source": "/(.*)",
+            "destination": "https://dogs-nine-brown.vercel.app/$1",
+            "statusCode": 301
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ]
+}
