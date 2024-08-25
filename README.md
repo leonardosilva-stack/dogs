@@ -25,10 +25,14 @@ Você pode acessar o repositório do projeto no GitHub através do seguinte link
 Siga as etapas abaixo para executar o Projeto Dogs em sua máquina local:
 
 1. Clone o repositório:
-git clone https://github.com/leonardosilva-stack/dogs.git
+   git clone https://github.com/leonardosilva-stack/dogs.git
 
 2. Instale as dependências e inicie o servidor de desenvolvimento:
-npm install
+   npm install
 
 3. Execute o seguinte comando:
-npm run dev
+   npm run dev
+
+4. Acesso
+   username: dog
+   password: dog
